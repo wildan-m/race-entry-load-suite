@@ -8,6 +8,14 @@ into a per-level verdict, per-step latency, business outcomes and a timeline cha
 
 The race, the 20,000 runners and every record the tools create are fictional test data.
 
+## Walkthrough
+
+![Walkthrough of a run: test runners in the Auth emulator, the live k6 dashboard at 125 and 500 runners, the generated report with its timeline and tables, the capacity buckets afterwards, and a spike test with its report](docs/race-entry-load-suite-walkthrough.gif)
+
+The recording follows two local runs: the seeded runners, the live k6 dashboard as the load steps
+up, the generated report, the database afterwards, then a spike from 20 to 100 runners and its
+recovery verdict. Every runner and entry in it is fictional test data.
+
 ## What is in here
 
 | Folder | What it holds |
