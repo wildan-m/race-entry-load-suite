@@ -1,0 +1,17 @@
+{
+  "name": "race-entry-functions",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Entry API for the Kestrel Bay Half Marathon: wave listing, entry lookup and capacity-safe wave claims.",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": "24"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "firebase-admin": "^14.5.1",
+    "firebase-functions": "^7.4.0"
+  }
+}

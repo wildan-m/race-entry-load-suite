@@ -1,0 +1,12 @@
+node_modules/
+*.log
+.DS_Store
+# Minted tokens and raw run output stay local.
+load/.tokens/
+results/
+# Firebase CLI and emulator state.
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+*.local

@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Clients never write directly: every claim goes through the entry API, which runs with the
+// Admin SDK and enforces capacity inside a transaction. Clients may read the public race data
+// and their own entry, nothing else.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /races/{raceId} {
+      allow read: if true;
+      allow write: if false;
+
+      match /waves/{waveId} {
+        allow read: if true;
+        allow write: if false;
+
+        match /buckets/{bucketId} {
+          allow read, write: if false;
+        }
+      }
+    }
+
+    match /entries/{entryId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+  }
+}

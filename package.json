@@ -1,0 +1,24 @@
+{
+  "name": "race-entry-load-suite",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "k6 load, spike, soak and breakpoint suite for the Kestrel Bay Half Marathon entry service on Firebase Cloud Functions, Firestore and Firebase Authentication.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "emulators": "firebase emulators:start --only auth,firestore,functions",
+    "seed": "node tools/seed.mjs",
+    "tokens": "node tools/mint-tokens.mjs",
+    "load": "node tools/run-suite.mjs",
+    "report": "node report/build-report.mjs",
+    "test": "node --test 'test/*.test.mjs'",
+    "test:integration": "firebase emulators:exec --only firestore \"node --test 'test/integration/*.test.mjs'\""
+  },
+  "devDependencies": {
+    "firebase-admin": "^14.5.1",
+    "firebase-tools": "^15.37.0"
+  }
+}
